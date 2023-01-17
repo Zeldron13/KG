@@ -18,8 +18,8 @@ let showBigPicture = function(item){
     commentList.appendChild(comment);
   }
 
-  bigPicture.querySelector('.social__comment-count').classList.add('hidden')
-  bigPicture.querySelector('.comments-loader').classList.add('hidden')
+  // bigPicture.querySelector('.social__comment-count').classList.add('hidden')
+  // bigPicture.querySelector('.comments-loader').classList.add('hidden')
   bigPicture.classList.remove('hidden');
   document.querySelector('body').classList.add('modal-open');
 
