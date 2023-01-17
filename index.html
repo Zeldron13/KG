@@ -39,7 +39,7 @@
             </fieldset>
 
             <!-- Форма редактирования изображения -->
-            <div class="img-upload__overlay  hidden">
+            <div class="img-upload__overlay hidden">
               <div class="img-upload__wrapper">
                 <div class="img-upload__preview-container">
 
@@ -115,11 +115,11 @@
 
                 <!-- Добавление хэш-тегов и комментария к изображению -->
                 <fieldset class="img-upload__text text">
-                  <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег" minlength="2" maxlength="25" >
-                  <textarea class="text__description" name="description" placeholder="Ваш комментарий..." minlength='3' maxlength='10' 
-                  data-pristine-minlength="3"
-                  data-pristine-maxlength="10"
-                  ></textarea>
+                  <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег"  maxlength="25" >
+
+                  <textarea class="text__description" name="description" placeholder="Ваш комментарий..."  maxlength="140"
+                  data-pristine-minlength-message="Минимальная длина 2 символа"
+                  data-pristine-maxlength-message="Максимальная длина 25 символов"></textarea>
                 </fieldset>
 
                 <!-- Кнопка для отправки данных на сервер -->
