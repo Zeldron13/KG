@@ -23,7 +23,7 @@
     </section>
 
     <!-- Контейнер для изображений от других пользователей -->
-    <section class="pictures  container">
+    <ig-pict class="pictures  container">
       <h2 class="pictures__title  visually-hidden">Фотографии других пользователей</h2>
 
       <!-- Поле для загрузки нового изображения на сайт -->
@@ -115,11 +115,13 @@
 
                 <!-- Добавление хэш-тегов и комментария к изображению -->
                 <fieldset class="img-upload__text text">
-                  <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег"  maxlength="25" >
-
-                  <textarea class="text__description" name="description" placeholder="Ваш комментарий..."  maxlength="140"
-                  data-pristine-minlength-message="Минимальная длина 2 символа"
-                  data-pristine-maxlength-message="Максимальная длина 25 символов"></textarea>
+                  <div class="img-upload__element">
+                    <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
+                  </div>
+                  <div class="img-upload__element">
+                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140"
+                  data-pristine-maxlength-message="Комментарий не может быть длиннее 140 символов"></textarea>
+                  </div>
                 </fieldset>
 
                 <!-- Кнопка для отправки данных на сервер -->
