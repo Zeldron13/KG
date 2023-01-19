@@ -48,7 +48,8 @@ let idList = [
 let idPhotoList = [
   1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25
 ];
-const ELEMENTS_ARRAY_COUNT = 21;
+const ELEMENTS_ARRAY_COUNT = 20;
+const MAX_COMMENTS_COUNT = 10;
 
 const getRandomMessagesArray = () => {
   const MESSAGE_COUNT = getRandomPositiveInteger(1, 2);
@@ -60,7 +61,7 @@ const getRandomMessagesArray = () => {
   return  Array.from({length: MESSAGE_COUNT}, getElement);
 };
 const getRandomCommentsArray = () => {
-  const COMMENTS_COUNT = getRandomPositiveInteger(1, 5);
+  const COMMENTS_COUNT = getRandomPositiveInteger(1, MAX_COMMENTS_COUNT);
   function getElement() {
     return {
       id: getRandomPositiveInteger(1,1000),
