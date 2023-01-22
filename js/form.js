@@ -43,17 +43,13 @@ const onEscKeyDown = (evt) => {
   }
 }
 
-
 /*Валидация*/
-
 const startsWithHash = (string) => string[0] === '#';
 
 const hasValidLength = (string) =>
   string.length >= MIN_HASHTAG_LENGTH && string.length <= MAX_HASHTAG_LENGTH;
  
 const hasValidSymbols = (string) => !UNVALID_SYMBOLS.test(string.slice(1));
-
-
 
 const isValidTag = (tag) => 
   startsWithHash(tag) && hasValidLength(tag) && hasValidSymbols(tag);
@@ -80,11 +76,47 @@ pristine.addValidator(
   'Неправильно заполнены хэштеги'
 );
 
-
 const onFormSubmit = (evt) => {
   evt.preventDefault();
   pristine.validate();
 };
+
+/*изменение размера и наложение эффектов */
+
+
+const scaleControlSmaller = document.querySelector('.scale__control--smaller');
+const scaleControlBigger = document.querySelector('.scale__control--bigger');
+const scaleImg = document.querySelector('.img-upload__preview');
+
+
+const scaleChanger = function(isSmaller){
+  let scaleControlValue = document.querySelector('.scale__control--value');
+  let scaleValue = scaleControlValue.value.replace('%','')
+
+  if(isSmaller){
+    if(scaleValue > 25){
+      scaleValue = Number(scaleValue) - Number(25);
+      scaleControlValue.value = scaleValue + '%'
+      scaleImg.style.transform = `scale(${scaleValue/100})`
+    }
+  }else{
+    if(scaleValue < 100){
+      scaleValue = Number(scaleValue) + Number(25);
+      scaleControlValue.value = scaleValue + '%'
+      scaleImg.style.transform = `scale(${scaleValue/100})`
+    }
+  }
+}
+
+scaleControlSmaller.addEventListener('click', function(){
+  scaleChanger(true)
+})
+scaleControlBigger.addEventListener('click', function(){
+  scaleChanger(false)
+})
+
+
+
 
 
 fileField.addEventListener('change',showModal)
