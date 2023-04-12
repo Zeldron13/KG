@@ -1,5 +1,7 @@
 import {getElementsArray} from './data.js'
 import {showBigPicture} from './rendering-big-picture.js'
+import {loadData} from './data-loader.js';
+
 
 let arrayItems = getElementsArray();
 
@@ -32,5 +34,10 @@ const renderingThumbnails = function (array) {
   }
   pictureList.appendChild(pictureListFragment);
 } 
+const dataError = function (err){
+  console.error(err)
+}
 
-renderingThumbnails(arrayItems);
+const loading = loadData(renderingThumbnails, console.error)
+
+loading();
